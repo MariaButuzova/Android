@@ -5,13 +5,24 @@ public class Movie {
     private Person[] actors;
     private Person[] directors;
     private String genre;
+    private String name;
 
-    public Movie() {
+
+    public Movie(String name) {
+        this.name = name;
+
         this.actors = new Person[10];
         this.directors = new Person[10];
         this.genre = new String();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Person[] getDirectors() {
         return directors;
