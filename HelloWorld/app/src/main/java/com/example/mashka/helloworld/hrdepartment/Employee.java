@@ -23,7 +23,7 @@ public class Employee {
         this.enrollmentDate = new Date();
         this.homeAddress = new String();
     }
-    
+
     public String getFirstName() {
         return firstName;
     }
