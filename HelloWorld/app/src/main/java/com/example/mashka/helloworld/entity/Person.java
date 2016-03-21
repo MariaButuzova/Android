@@ -5,9 +5,6 @@ import java.util.Date;
 public class Person {
     private Date birthDay;
     private String firstName;
-    /*public enum Gender {
-        MALE, FEMALE, MIDDLE
-    }*/
 
     public Person() {
         this.birthDay = new Date();
@@ -47,5 +44,13 @@ public class Person {
         int result = birthDay.hashCode();
         result = 31 * result + firstName.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "birthDay=" + birthDay +
+                ", firstName='" + firstName + '\'' +
+                '}';
     }
 }

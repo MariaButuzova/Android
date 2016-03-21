@@ -1,17 +1,19 @@
 package com.example.mashka.helloworld.entity;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Movie {
-    private Person[] actors;
-    private Person[] directors;
+    private ArrayList<Person> actors;
+    private ArrayList<Person> directors;
     private String genre;
     private String movieName;
 
-
     public Movie() {
         this.movieName = new String();
-        this.actors = new Person[10];
-        this.directors = new Person[10];
+        this.actors = new ArrayList();
+        this.directors = new ArrayList();
         this.genre = new String();
     }
 
@@ -23,20 +25,20 @@ public class Movie {
         this.movieName = name;
     }
 
-    public Person[] getDirectors() {
-        return directors;
-    }
-
-    public void setDirectors(Person[] directors) {
-        this.directors = directors;
-    }
-
-    public Person[] getActors() {
+    public ArrayList<Person> getActors() {
         return actors;
     }
 
-    public void setActors(Person[] actors) {
+    public void setActors(ArrayList<Person> actors) {
         this.actors = actors;
+    }
+
+    public ArrayList<Person> getDirectors() {
+        return directors;
+    }
+
+    public void setDirectors(ArrayList<Person> directors) {
+        this.directors = directors;
     }
 
     public String getGenre() {
@@ -45,5 +47,26 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public void addActor(Person person) {
+        if (!actors.contains(person)) {
+            actors.add(person);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "actors=" + actors +
+                ", directors=" + directors +
+                ", genre='" + genre + '\'' +
+                ", movieName='" + movieName + '\'' +
+                '}';
+    }
+
+    private boolean isExisting(ArrayList<Person> persons, Person person) {
+        persons.contains(person);
+        return false;
     }
 }
