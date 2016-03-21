@@ -4,11 +4,14 @@ import java.util.Date;
 
 public class Person {
     private Date birthDay;
-    private String name;
+    private String firstName;
+    /*public enum Gender {
+        MALE, FEMALE, MIDDLE
+    }*/
 
-    public Person(Date birthDay, String name) {
-        this.birthDay = birthDay;
-        this.name = name;
+    public Person() {
+        this.birthDay = new Date();
+        this.firstName = new String();
     }
 
     public Date getBirthDay() {
@@ -19,12 +22,12 @@ public class Person {
         this.birthDay = birthDay;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
     @Override
@@ -35,14 +38,14 @@ public class Person {
         Person person = (Person) o;
 
         if (!birthDay.equals(person.birthDay)) return false;
-        return name.equals(person.name);
+        return firstName.equals(person.firstName);
 
     }
 
     @Override
     public int hashCode() {
         int result = birthDay.hashCode();
-        result = 31 * result + name.hashCode();
+        result = 31 * result + firstName.hashCode();
         return result;
     }
 }
