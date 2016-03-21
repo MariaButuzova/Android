@@ -6,15 +6,27 @@ import java.util.Arrays;
 
 public class Movie {
     private ArrayList<Person> actors;
-    private ArrayList<Person> directors;
+    private Person[] directors;
     private String genre;
     private String movieName;
 
     public Movie() {
         this.movieName = new String();
         this.actors = new ArrayList();
-        this.directors = new ArrayList();
+        this.directors = new Person[10];
         this.genre = new String();
+    }
+
+    public void addActor(Person person) {
+        if (!actors.contains(person)) {
+            actors.add(person);
+        }
+    }
+
+    public  void addDirector(Person person) {
+        if (!isExisting(directors, person)) {
+            directors[9] = person;
+        }
     }
 
     public String getMovieName() {
@@ -33,11 +45,11 @@ public class Movie {
         this.actors = actors;
     }
 
-    public ArrayList<Person> getDirectors() {
+    public Person[] getDirectors() {
         return directors;
     }
 
-    public void setDirectors(ArrayList<Person> directors) {
+    public void setDirectors(Person[] directors) {
         this.directors = directors;
     }
 
@@ -49,11 +61,6 @@ public class Movie {
         this.genre = genre;
     }
 
-    public void addActor(Person person) {
-        if (!actors.contains(person)) {
-            actors.add(person);
-        }
-    }
 
     @Override
     public String toString() {
@@ -65,8 +72,12 @@ public class Movie {
                 '}';
     }
 
-    private boolean isExisting(ArrayList<Person> persons, Person person) {
-        persons.contains(person);
+    private boolean isExisting(Person[] persons, Person person) {
+        for (int i = 0; i < persons.length; i++) {
+            if (persons[i].equals(person)) {
+                return true;
+            }
+        }
         return false;
     }
 }
