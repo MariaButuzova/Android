@@ -4,9 +4,9 @@ package com.example.mashka.helloworld.music;
 public class User {
 
     private String userName;
-    private String likeTrack;
+    private MusicTrack likeTrack;
 
-    public User(String userName, String likeTrack) {
+    public User(String userName, MusicTrack likeTrack) {
         this.userName = userName;
         this.likeTrack = likeTrack;
     }
@@ -19,11 +19,11 @@ public class User {
         this.userName = userName;
     }
 
-    public String getLikeTrack() {
+    public MusicTrack getLikeTrack() {
         return likeTrack;
     }
 
-    public void setLikeTrack(String likeTrack) {
+    public void setLikeTrack(MusicTrack likeTrack) {
         this.likeTrack = likeTrack;
     }
 }
